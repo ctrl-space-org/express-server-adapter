@@ -1,5 +1,5 @@
 import { injectable, inject } from 'inversify'
-import express, { Express, RequestHandler } from 'express'
+import express, { Express, RequestHandler, NextFunction } from 'express'
 import 'reflect-metadata'
 import { Server, Router, Plugins } from 'server-port'
 import { PluginsType } from '../Types'
@@ -7,7 +7,7 @@ import { PluginsType } from '../Types'
 @injectable()
 class ExpressAdapter implements Server, Router {
   public plugins: Plugins;
-  private server: Express ;
+  private server: Express;
 
   public constructor (@inject(PluginsType) plugins:Plugins) {
     this.server = express()
@@ -36,7 +36,7 @@ class ExpressAdapter implements Server, Router {
     this.server.use(handler)
   }
 
-  public listen (port: string = '80', fun: Function):void {
+  public listen(port: string = '80', fun: NextFunction):void {
     this.server.listen(port, fun)
   }
 }
