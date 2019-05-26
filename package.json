@@ -1,9 +1,9 @@
 {
   "name": "express-server-adapter",
-  "version": "0.0.3-alpha",
+  "version": "0.0.4-alpha",
   "description": "",
   "private": false,
-  "main": "./src/main.ts",
+  "main": "./dist/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc"
