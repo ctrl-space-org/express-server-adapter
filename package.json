@@ -1,6 +1,6 @@
 {
   "name": "express-server-adapter",
-  "version": "0.0.4-alpha",
+  "version": "0.0.1",
   "description": "",
   "private": false,
   "main": "./dist/main.js",
