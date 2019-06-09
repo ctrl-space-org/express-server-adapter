@@ -3,8 +3,7 @@ import { RouterExpressAdapter } from './Adapter/RouterExpressAdapter'
 import { PluginAdapter } from './Adapter/PluginAdapter'
 import { Container } from 'inversify'
 import 'reflect-metadata'
-import { Server, Router, Plugins } from 'server-port'
-import { ServerType, PluginsType, RouterType } from './Types'
+import { Server, Router, Plugins, ServerType, PluginsType, RouterType } from 'server-port'
 
 export default (container: Container): void => {
   container.bind<Server>(ServerType).to(ExpressAdapter)
@@ -12,4 +11,4 @@ export default (container: Container): void => {
   container.bind<Router>(RouterType).to(RouterExpressAdapter)
 }
 
-export {  ServerType, PluginsType, RouterType, ExpressAdapter, RouterExpressAdapter, PluginAdapter }
+export { ServerType, PluginsType, RouterType, ExpressAdapter, RouterExpressAdapter, PluginAdapter }
